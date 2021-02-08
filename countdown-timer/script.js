@@ -17,13 +17,20 @@ function countdown() {
   const minutes = Math.ceil(totalSeconds / 60) % 60;
   const seconds = Math.ceil(totalSeconds) % 60;
 
-  monthElement.innerHTML = months;
-  dayElement.innerHTML = days;
-  hourElement.innerHTML = hours;
-  minuteElement.innerHTML = minutes;
-  secondElement.innerHTML = seconds;
+  monthElement.innerHTML = formattime(months);
+  dayElement.innerHTML = formattime(days);
+  hourElement.innerHTML = formattime(hours);
+  minuteElement.innerHTML = formattime(minutes);
+  secondElement.innerHTML = formattime(seconds);
 
 }
 
+function formattime(time) {
+  if (time < 10) {
+    return `0${time}`;
+  } else {
+    return time;
+  }
+}
 countdown();
 setInterval(countdown, 1000);//倒數
