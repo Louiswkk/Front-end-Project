@@ -11,9 +11,9 @@ function countdown() {
   const currentDate = new Date();
 
   const totalSeconds = (endYearDate - currentDate) / 1000;
-  const months = Math.ceil(totalSeconds / (24 * 60 * 60 * 30));
-  const days = Math.ceil(totalSeconds / (24 * 3600));
-  const hours = Math.ceil(totalSeconds / 3600) % 24;
+  const months = Math.floor(totalSeconds / (24 * 60 * 60 * 30));
+  const days = Math.floor(totalSeconds / (24 * 3600));
+  const hours = Math.floor(totalSeconds / 3600) % 24;
   const minutes = Math.ceil(totalSeconds / 60) % 60;
   const seconds = Math.ceil(totalSeconds) % 60;
 
